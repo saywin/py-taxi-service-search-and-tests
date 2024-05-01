@@ -4,7 +4,12 @@ from django.urls import reverse
 
 from taxi.forms import CarSearchForm
 from taxi.models import Car, Manufacturer
-from taxi.views import CarListView, CarDeleteView, CarUpdateView, CarCreateView
+from taxi.views import (
+    CarListView,
+    CarDeleteView,
+    CarUpdateView,
+    CarCreateView
+)
 
 CAR_URL = reverse("taxi:car-list")
 

@@ -4,10 +4,12 @@ from django.urls import reverse, reverse_lazy
 
 from taxi.forms import ManufacturerSearchForm
 from taxi.models import Manufacturer
-from taxi.views import (ManufacturerListView,
-                        ManufacturerCreateView,
-                        ManufacturerUpdateView,
-                        ManufacturerDeleteView)
+from taxi.views import (
+    ManufacturerListView,
+    ManufacturerCreateView,
+    ManufacturerUpdateView,
+    ManufacturerDeleteView
+)
 
 MANUFACTURER_URL = reverse("taxi:manufacturer-list")
 
