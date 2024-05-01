@@ -44,3 +44,19 @@ class PrivateDriverTest(TestCase):
         view = DriverDeleteView()
         view.object = self.user
         self.assertEqual(view.get_success_url(), DRIVER_URL)
+
+    def test_create_author(self):
+        form_data = {
+            "username": "new_user",
+            "password1": "user55test",
+            "password2": "user55test",
+            "license_number": "ABC12346",
+            "first_name": "First user",
+            "last_name": "Last user",
+        }
+        self.client.post(reverse("taxi:driver-create"), data=form_data)
+        new_user = get_user_model().objects.get(username=form_data["username"])
+
+        self.assertEqual(new_user.first_name, form_data["first_name"])
+        self.assertEqual(new_user.last_name, form_data["last_name"])
+        self.assertEqual(new_user.license_number, form_data["license_number"])
