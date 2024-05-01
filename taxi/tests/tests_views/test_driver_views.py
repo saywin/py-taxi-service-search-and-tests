@@ -3,7 +3,10 @@ from django.test import TestCase
 from django.urls import reverse
 
 from taxi.forms import DriverSearchForm
-from taxi.views import DriverListView, DriverDeleteView, DriverCreateView, DriverLicenseUpdateView
+from taxi.views import (DriverListView,
+                        DriverDeleteView,
+                        DriverCreateView,
+                        DriverLicenseUpdateView)
 
 DRIVER_URL = reverse("taxi:driver-list")
 

@@ -4,7 +4,10 @@ from django.urls import reverse, reverse_lazy
 
 from taxi.forms import ManufacturerSearchForm
 from taxi.models import Manufacturer
-from taxi.views import ManufacturerListView, ManufacturerCreateView, ManufacturerUpdateView, ManufacturerDeleteView
+from taxi.views import (ManufacturerListView,
+                        ManufacturerCreateView,
+                        ManufacturerUpdateView,
+                        ManufacturerDeleteView)
 
 MANUFACTURER_URL = reverse("taxi:manufacturer-list")
 
@@ -22,7 +25,9 @@ class PrivateManufacturerTest(TestCase):
             password="1qazcde3",
         )
         self.client.force_login(self.user)
-        self.manufacturer = Manufacturer.objects.create(name="Audi", country="Germany")
+        self.manufacturer = Manufacturer.objects.create(
+            name="Audi",
+            country="Germany")
         self.response = self.client.get(MANUFACTURER_URL)
 
     def test_manufacturer_template_used(self):

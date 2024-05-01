@@ -8,13 +8,13 @@ class DriverCreationFormTest(TestCase):
 
     def setUp(self):
         self.form_data = {
-                "username": "new_user",
-                "password1": "user55test",
-                "password2": "user55test",
-                "license_number": "ABC12345",
-                "first_name": "First user",
-                "last_name": "Last user",
-            }
+            "username": "new_user",
+            "password1": "user55test",
+            "password2": "user55test",
+            "license_number": "ABC12345",
+            "first_name": "First user",
+            "last_name": "Last user",
+        }
         self.form = DriverCreationForm(data=self.form_data)
 
     def test_driver_creation_form_is_valid(self):

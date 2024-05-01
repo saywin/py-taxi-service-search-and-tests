@@ -22,7 +22,9 @@ class PrivateCarTest(TestCase):
             password="1qazcde3",
         )
         self.client.force_login(self.user)
-        self.manufacturer = Manufacturer.objects.create(name="Audi", country="Germany")
+        self.manufacturer = Manufacturer.objects.create(
+            name="Audi",
+            country="Germany")
         self.car = Car.objects.create(
             model="test-car",
             manufacturer=self.manufacturer,
